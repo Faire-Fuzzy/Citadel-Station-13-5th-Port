@@ -156,7 +156,7 @@
 /mob/living/silicon/robot/proc/pick_module()
 	if(module)
 		return
-	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure", "Loader", "Security K-9 Unit", "MediHound", "Borgi")
+	designation = input("Please, select a module!", "Robot", null, null) in list("Standard", "Engineering","Science", "Medical", "Miner", "Janitor","Service", "Security", "Pleasure", "Loader", "Security K-9 Unit", "MediHound", "Borgi", "Vulpes")
 	var/animation_length=0
 	if(module)
 		return
@@ -194,7 +194,7 @@
 		if("Pleasure")
 			module = new /obj/item/weapon/robot_module/pleasure(src)
 			hands.icon_state = "pleasure"
-			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm", "Xenomorph")
+			var/icontype = input("Select an icon!", "Robot", null, null) in list("Male", "Female", "Herm", "Xenomorph", "Vulpes")
 			switch(icontype)
 				if("Female")
 					icon_state = "p_female"
@@ -299,6 +299,14 @@
 			animation_length = 37
 			modtype = "Borgi"
 			feedback_inc("cyborg_borgi",1)
+
+		if("Vulpes")
+			module = new /obj/item/weapon/robot_module/vulpes/New()
+			hands.icon_state = "vulpes"
+			icon_state = "vulpes"
+			animation_length = 0
+			modtype = "Vulpes"
+			feedback_inc("cyborg_vulpes",1)
 
 	transform_animation(animation_length)
 	notify_ai(2)

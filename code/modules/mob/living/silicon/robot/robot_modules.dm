@@ -492,3 +492,13 @@
 	modules += new /obj/item/device/sensor_device(src)
 	emag = new /obj/item/weapon/dogborg/pounce(src)
 	fix_modules()
+
+/obj/item/weapon/robot_module/vulpes/New()
+	..()
+	modules += new /obj/item/weapon/reagent_containers/borghypo/pleasure(src)
+	modules += new /obj/item/weapon/dildo(src)
+	modules += new /obj/item/weapon/dogborg/jaws/small(src)
+	modules += new /obj/item/weapon/rsf{matter = 30}(src)
+	modules += new /obj/item/device/analyzer/nose(src)
+	modules += new /obj/item/weapon/soap/tongue(src)
+	emag = new /obj/item/weapon/dildo/psych(src)
